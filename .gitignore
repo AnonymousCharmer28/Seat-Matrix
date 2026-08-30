@@ -1,0 +1,30 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# Streamlit
+.streamlit/
+
+# OS / editor
+.DS_Store
+.vscode/
+*.swp
+
+# Generated outputs (exported reports — not part of the source repo)
+outputs/
+*.xlsx
+!data/*.xlsx
+*.pdf
+!docs/*.pdf
+
+# Distribution / packaging
+*.egg-info/
+dist/
+build/
