@@ -1,4 +1,4 @@
-# SeatMatrix 🪑📊
+# SeatMatrix 
 ### Greedy-Based Constraint-Aware Examination Seating Arrangement
 
 SeatMatrix is an algorithm-driven examination seating arrangement system
@@ -18,7 +18,7 @@ See `docs/test-results.md` for real, measured benchmark numbers.
 
 ---
 
-## 🎯 Problem Statement
+## ▶ Problem Statement
 
 Colleges often receive examination student lists in spreadsheets and
 manually prepare seating arrangements across multiple classrooms and
@@ -29,11 +29,11 @@ blocks. The arrangement must simultaneously satisfy:
 - Branch, division/class, academic year/semester
 - Number of available blocks, benches per block, seats per bench
   (one-seater or two-seater)
-- Efficient utilization of available seating capacity
+- Efficient utilisation of available seating capacity
 
 SeatMatrix automates this using an algorithmic approach.
 
-## 💡 Core Idea
+## ▶ Core Idea
 
 Student groups are treated as ordered streams according to roll number.
 For a two-seater bench, two compatible streams are allocated in parallel:
@@ -53,7 +53,7 @@ capacity, remaining students continue into the next suitable block.
 One-seater benches are handled independently since no pairing constraint
 applies to them.
 
-## 🧠 Algorithms & Data Structures
+## ▶ Algorithms & Data Structures
 
 1. **Greedy Method** — at every step, the algorithm selects the best
    feasible *local* allocation given current priorities and constraints.
@@ -67,7 +67,7 @@ applies to them.
 5. **Matrix-Based Representation** — `Block → Bench → Seat`, with O(1)
    bidirectional lookup (`Student ↔ Location`) via `SeatingMatrix`.
 
-## ⚙️ System Workflow
+## ▶ System Workflow
 
 ```
    Student Data (Excel / CSV / PDF)
@@ -114,7 +114,7 @@ applies to them.
     Sheet
 ```
 
-## 📥 Input
+## ▶ Input
 
 | Field | Description |
 |---|---|
@@ -137,7 +137,7 @@ Supported formats: `.csv`, `.xlsx`, `.xls`, and text/table-based `.pdf`
 (scanned/image-only PDFs are detected and clearly rejected — OCR is a
 future improvement, not part of v1; see `docs/algorithm.md` §8).
 
-## 📤 Outputs
+## ▶ Outputs
 
 - **A. Consolidated Seating Plan** — branch/division/semester/subject with
   seat-number range and totals, per floor/block.
@@ -151,7 +151,7 @@ future improvement, not part of v1; see `docs/algorithm.md` §8).
 Export formats: Excel (all sheets in one workbook), CSV, and PDF (via
 `reportlab`, for shorter tabular reports).
 
-## 🔐 Constraints
+## ▶ Constraints
 
 **Hard constraints** (see `docs/algorithm.md` §5 for the full H1–H8 table):
 seat/allocation uniqueness, block capacity, sequential roll order, and
@@ -161,7 +161,7 @@ different branch / division / year-semester for bench-mates.
 candidates): prefer the largest remaining compatible group, better bench
 utilization, fewer block switches, deterministic tie-break by group key.
 
-## 📐 Analysis of Algorithms
+## ▶ Analysis of Algorithms
 
 Three approaches, all operating on identical models for a fair comparison
 (`src/baselines.py`, `src/greedy_allocator.py`):
@@ -177,7 +177,7 @@ See `docs/complexity.md` for the full time/space complexity table and
 measurably fewer conflicts and equal-or-better utilization on unbalanced
 data, at a higher (but still practical) execution-time cost.
 
-## 🛠️ Tech Stack
+## ▶ Tech Stack
 
 - **Language:** Python 3.12
 - **Core concepts:** Greedy algorithms, Priority Queue / Max Heap,
@@ -188,7 +188,7 @@ data, at a higher (but still practical) execution-time cost.
 - **Interface:** Streamlit
 - **Development:** VS Code, Git, GitHub
 
-## 📁 Project Structure
+## ▶ Project Structure
 
 ```
 seat-matrix/
@@ -231,7 +231,7 @@ seat-matrix/
     └── test-results.md
 ```
 
-## 🚀 Getting Started
+## ▶ Getting Started
 
 See **"How to run this in VS Code"** below for full setup steps.
 
@@ -242,7 +242,7 @@ python3 scripts/benchmark.py               # reproduce benchmark numbers
 streamlit run src/main.py                  # launch the UI
 ```
 
-## 🚀 Future Improvements
+## ▶ Future Improvements
 
 - OCR-based scanned PDF processing
 - More sophisticated soft-preference optimization (e.g. lookahead
@@ -252,7 +252,7 @@ streamlit run src/main.py                  # launch the UI
 - Visualization of classroom seating layout
 - Additional baseline algorithms for comparison (e.g. bipartite matching)
 
-## 🎓 Academic Focus
+## ▶ Academic Focus
 
 SeatMatrix was developed primarily as an Analysis of Algorithms project.
 The central focus is the application and analysis of:
